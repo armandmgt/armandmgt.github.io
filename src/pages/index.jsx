@@ -88,8 +88,7 @@ const Index = () => (
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Find me on other platforms:{' '}
-            <a href="https://github.com/armandmgt">Github</a> &{' '}
+            Find me on other platforms: <a href="https://github.com/armandmgt">Github</a> &{' '}
             <a href="https://twitter.com/armandmgt">Twitter</a>
           </ContactText>
         </Inner>
