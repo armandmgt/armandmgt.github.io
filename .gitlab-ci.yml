@@ -12,5 +12,5 @@ deploy:
     - yarn install
     - ./node_modules/.bin/gatsby build
     - ssh-add <(echo "$STAGING_PRIVATE_KEY")
-    - scp -P22 -r build/* portfolio_deploy@armandmgt.fr:/
+    - scp -r public/* portfolio_deploy@armandmgt.fr:/
   
