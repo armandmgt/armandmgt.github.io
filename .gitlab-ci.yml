@@ -9,7 +9,7 @@ deploy:
     - eval $(ssh-agent -s)
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - yarn install
+    - yarn install --production
     - ./node_modules/.bin/gatsby build
     - ssh-add <(echo "$STAGING_PRIVATE_KEY")
     - scp -r public/* portfolio_deploy@armandmgt.fr:/home/portfolio_deploy/

@@ -46,7 +46,7 @@ const Contact = ({ children, offset }) => (
       {children}
     </Content>
     <Divider speed={0.1} offset={offset}>
-      <UpDown>
+      {/* <UpDown>
         <SVG icon="upDown" hiddenMobile width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
         <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
       </UpDown>
@@ -58,7 +58,7 @@ const Contact = ({ children, offset }) => (
       <SVG icon="circle" width={6} fill={colors.white} left="4%" top="20%" />
       <SVG icon="circle" width={12} fill={colors['grey-darkest']} left="70%" top="60%" />
       <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
-      <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
+      <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" /> */}
     </Divider>
   </>
 )

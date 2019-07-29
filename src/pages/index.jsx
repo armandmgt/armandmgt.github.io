@@ -73,7 +73,7 @@ const Index = () => (
           <Avatar src={avatar} alt="John Doe" />
           <AboutSub>
             The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
+            Emoji into my speech to better express myself 😉.
           </AboutSub>
         </AboutHero>
         <AboutDesc>

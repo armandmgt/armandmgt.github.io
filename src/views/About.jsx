@@ -11,7 +11,7 @@ const About = ({ children, offset }) => (
   <>
     <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={offset} />
     <Divider speed={0.1} offset={offset}>
-      <UpDown>
+      {/* <UpDown>
         <SVG icon="box" hiddenMobile width={6} fill={colors.blue} left="50%" top="75%" />
         <SVG icon="upDown" hiddenMobile width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
         <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
@@ -27,7 +27,7 @@ const About = ({ children, offset }) => (
       <SVG icon="circle" width={12} fill={colors['grey-darkest']} left="70%" top="60%" />
       <SVG icon="box" width={6} fill={colors.orange} left="10%" top="10%" />
       <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
-      <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
+      <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" /> */}
     </Divider>
     <Content speed={0.4} offset={offset}>
       <Inner>{children}</Inner>
