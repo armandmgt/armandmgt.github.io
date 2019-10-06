@@ -6,10 +6,9 @@ import ImBatman from '../sounds/im-batman.mp3';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 
-new KonamiCode().listen(() => {
-  console.log('ma bite');
-  new Audio(ImBatman).play();
-});
+if (typeof document !== 'undefined') {
+  new KonamiCode().listen(() => new Audio(ImBatman).play());
+}
 
 const Layout = () => (
   <>
