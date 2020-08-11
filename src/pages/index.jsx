@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { Parallax } from 'react-spring/renderprops-addons.cjs';
+import Typewriter from 'typewriter-effect';
 
 // Components
 import Layout from '../components/Layout';
@@ -57,58 +58,80 @@ const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
 `;
 
-const Index = () => (
-  <>
-    <Layout />
-    <Parallax pages={3}>
-      <Hero offset={0}>
-        <BigTitle>
-          Hello, <br /> I'm Armand M
-        </BigTitle>
-        <Subtitle>
-          I'm creating web services for the next generation of consumer-facing
-          companies.
-        </Subtitle>
-      </Hero>
-      <About offset={1}>
-        <Title>About</Title>
-        <AboutHero>
-          <Avatar src={avatar} alt="John Doe" />
-          <AboutSub>
-            The English language can not fully capture the depth and complexity
-            of my thoughts. So I'm incorporating Emoji into my speech to better
-            express myself 😉.
-          </AboutSub>
-        </AboutHero>
-        <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding
-          hands? That's how you're gonna feel every day. My mother cried the day
-          I was born because she knew she’d never be prettier than me. You
-          should make me your campaign manager. I was born for politics. I have
-          great hair and I love lying. Captain? The kids want to know where
-          Paulie the Pigeon is. I told them he got sucked up into an airplane
-          engine, is that all right?
-        </AboutDesc>
-      </About>
-      <Contact offset={2}>
-        <Inner>
-          <Title>Get in touch</Title>
-          <ContactText>
-            Find me on other platforms:{' '}
-            <a href="https://github.com/armandmgt">Github</a>{' '}
-            <a href="https://twitter.com/armandmgt">Twitter</a>
-          </ContactText>
-        </Inner>
-        <Footer>
-          &copy; 2019 by Armand Mégrot.{' '}
-          <a href="https://gitlab.armandmgt.fr/armandmgt/web-portfolio">
-            Gitlab Repository
-          </a>
-          . Made by <a href="https://armandmgt.fr">armandmgt</a>.
-        </Footer>
-      </Contact>
-    </Parallax>
-  </>
-);
+const Index = () => {
+  const [typing, setTyping] = useState('title1');
+  return (
+    <>
+      <Layout />
+      <Parallax pages={3}>
+        <Hero offset={0}>
+          <BigTitle>
+            {typing == 'title1' ? (<Typewriter
+              options={{ delay: 55 }}
+              onInit={
+                typewriter => {
+                  typewriter.
+                    typeString('Hello,<br/>my name is Armand M').
+                    pauseFor(1000).
+                    callFunction(() => setTyping('sub1')).
+                    start();
+                }
+              }
+            />) : (<span>Hello,<br/>my name is Armand M</span>)}
+          </BigTitle>
+          <Subtitle>
+            {typing == 'sub1' && (<Typewriter
+              options={{ delay: 45 }}
+              onInit={
+                typewriter => {
+                  typewriter.
+                    typeString('I’m creating web services for the next generation of consumer-facing companies.').
+                    start();
+                }
+              }
+            />)}
+          </Subtitle>
+        </Hero>
+        <About offset={1}>
+          <Title>About</Title>
+          <AboutHero>
+            <Avatar src={avatar} alt="John Doe" />
+            <AboutSub>
+              The English language can not fully capture the depth and complexity
+              of my thoughts. So I'm incorporating Emoji into my speech to better
+              express myself 😉.
+            </AboutSub>
+          </AboutHero>
+          <AboutDesc>
+            You know the way you feel when you see a picture of two otters holding
+            hands? That's how you're gonna feel every day. My mother cried the day
+            I was born because she knew she’d never be prettier than me. You
+            should make me your campaign manager. I was born for politics. I have
+            great hair and I love lying. Captain? The kids want to know where
+            Paulie the Pigeon is. I told them he got sucked up into an airplane
+            engine, is that all right?
+          </AboutDesc>
+        </About>
+        <Contact offset={2}>
+          <Inner>
+            <Title>Get in touch</Title>
+            <ContactText>
+              Find me on other platforms:{' '}
+              <a href="https://github.com/armandmgt">Github</a>{' '}
+              <a href="https://twitter.com/armandmgt">Twitter</a>
+            </ContactText>
+          </Inner>
+          <Footer>
+            &copy; 2019 by Armand Mégrot.{' '}
+            <a href="https://gitlab.armandmgt.fr/armandmgt/web-portfolio">
+              Gitlab Repository
+            </a>
+            . Made by <a href="https://armandmgt.fr">armandmgt</a>.
+          </Footer>
+        </Contact>
+      </Parallax>
+    </>
+  )
+};
 
 export default Index;
