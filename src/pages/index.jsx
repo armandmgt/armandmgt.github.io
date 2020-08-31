@@ -117,16 +117,16 @@ const Index = () => {
             <Title>Get in touch</Title>
             <ContactText>
               Find me on other platforms:{' '}
-              <a href="https://github.com/armandmgt">Github</a>{' '}
+              <a href="https://github.com/armandmgt">Github</a>{', '}
               <a href="https://twitter.com/armandmgt">Twitter</a>
             </ContactText>
           </Inner>
           <Footer>
-            &copy; 2019 by Armand Mégrot.{' '}
-            <a href="https://gitlab.armandmgt.fr/armandmgt/web-portfolio">
-              Gitlab Repository
+            &copy; 2019 Armand Mégrot. Fork me on{' '}
+            <a href="https://github.com/armandmgt/armandmgt.github.io">
+              Github
             </a>
-            . Made by <a href="https://armandmgt.fr">armandmgt</a>.
+            . Made with ❤️ by <a href="https://armandmgt.fr">armandmgt</a>.
           </Footer>
         </Contact>
       </Parallax>
