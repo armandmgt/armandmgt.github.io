@@ -11,6 +11,7 @@
     title: string;
     icon?: SvelteComponent;
     description: string;
+    brightImg?: boolean;
   }
 
   const projects: Project[] = [
@@ -33,7 +34,8 @@
       title: "Self-hosted mastodon",
       icon: MessageCircleIcon,
       description: "I am self-hosting a mastodon personal instance. The purpose was to avoid lags and also to understand how it works.",
-      link: "https://mastodon.armandmgt.fr"
+      link: "https://mastodon.armandmgt.fr",
+      brightImg: true
     },
     {
       heroImg: PortfolioHero,
@@ -64,13 +66,16 @@
       {#each projects as project}
         <div class="relative w-96 flex flex-col overflow-hidden m-1 last:mr-32">
           <h3>
-            {project.title}
-            <svelte:component this={project.icon} class="inline" />
+            <a href={project.link}>
+              {project.title}
+              <svelte:component this={project.icon} class="inline" />
+            </a>
           </h3>
           <img src={project.heroImg} alt={project.title} class="grow object-cover" />
           <p
-            class="absolute border-2 p-2 text-black bg-white dark:text-white dark:bg-black transition-all overflow-hidden"
-            style:bottom={descShown ? '0' : '-100px'}>
+            class="absolute p-3 text-{project.brightImg ? 'black' : 'white'} bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 transition-all overflow-hidden"
+            style:bottom={descShown ? '0' : '-100px'}
+          >
             {project.description}
           </p>
         </div>
