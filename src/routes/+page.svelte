@@ -1,9 +1,9 @@
 <script lang="ts">
   import { BookIcon, FilterIcon, GithubIcon, MessageCircleIcon, RssIcon } from "svelte-feather-icons";
-  import RocketScienceHero from "$lib/assets/images/RocketScienceHero.jpg";
-  import ExposeHero from "../lib/assets/images/ExposeHero.jpg";
-  import MastodonPersoHero from "$lib/assets/images/MastodonPersoHero.jpg";
-  import PortfolioHero from "$lib/assets/images/PortfolioHero.jpg";
+  import RocketScienceHero from "$lib/assets/images/RocketScienceHero-optimized.jpg";
+  import ExposeHero from "../lib/assets/images/ExposeHero-optimized.jpg";
+  import MastodonPersoHero from "$lib/assets/images/MastodonPersoHero-optimized.jpg";
+  import PortfolioHero from "$lib/assets/images/PortfolioHero-optimized.jpg";
   import type { SvelteComponent } from "svelte";
 
   interface Project {
@@ -11,7 +11,7 @@
     title: string;
     icon?: SvelteComponent;
     description: string;
-    brightImg?: boolean;
+    descColor: "black" | "white";
   }
 
   const projects: Project[] = [
@@ -20,14 +20,16 @@
       title: "Rocket Science",
       icon: FilterIcon,
       description: "Experimentation project using a sport API. The goal is to experiment with the Dynamic Island & LiveActivities API on iOS.",
-      link: "https://github.com/armandmgt/rocket-science"
+      link: "https://github.com/armandmgt/rocket-science",
+      descColor: "white"
     },
     {
       heroImg: ExposeHero,
       title: "Expose",
       icon: RssIcon,
       description: "Implementing a reverse proxy to expose local web applications. The local proxy also exposes a web dashboard to inspect and replay requests.",
-      link: "https://github.com/armandmgt/expose"
+      link: "https://github.com/armandmgt/expose",
+      descColor: "white"
     },
     {
       heroImg: MastodonPersoHero,
@@ -35,14 +37,15 @@
       icon: MessageCircleIcon,
       description: "I am self-hosting a mastodon personal instance. The purpose was to avoid lags and also to understand how it works.",
       link: "https://mastodon.armandmgt.fr",
-      brightImg: true
+      descColor: "black"
     },
     {
       heroImg: PortfolioHero,
       title: "This portfolio",
       icon: BookIcon,
       description: "Showing off the few side-projects I am happy about. I am not a good designer so please be kind :)",
-      link: "https://github.com/armandmgt/armandmgt.github.io"
+      link: "https://github.com/armandmgt/armandmgt.github.io",
+      descColor: "white"
     }
   ];
 
@@ -71,9 +74,12 @@
               <svelte:component this={project.icon} class="inline" />
             </a>
           </h3>
-          <img src={project.heroImg} alt={project.title} class="grow object-cover" />
+          <div class="grow overflow-hidden">
+            <img src={project.heroImg} alt={project.title}
+                 class="h-full object-cover transition-all duration-700 hover:scale-105" />
+          </div>
           <p
-            class="absolute p-3 text-{project.brightImg ? 'black' : 'white'} bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 transition-all overflow-hidden"
+            class="absolute text-{project.descColor} border-{project.descColor} p-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border-t transition-all overflow-hidden"
             style:bottom={descShown ? '0' : '-100px'}
           >
             {project.description}
