@@ -4,21 +4,22 @@
   import { initTheme, initComplete as themeInitComplete } from "$lib/theme";
   import ThemeSelector from "./ThemeSelector.svelte";
 
-  if (browser)
-    import("tw-elements");
+  if (browser) import("tw-elements");
   initTheme();
 
+  const themeColor = "#0790F2";
+  const backgroundColor = "#000000";
   const siteLogo = "logo.png";
   const siteName = "Portfolio - armandmgt";
   const description = "Landing page showing the things I’m proud of.";
   const authorName = "Armand Mégrot";
   const twitterHandle = "@armandmgt";
 
-  type Thing = Record<string, string | number | Thing | Thing[]>
+  type Thing = Record<string, string | number | Thing | Thing[]>;
   const serializeSchema = (schema: Thing): string => {
     // eslint-disable-next-line no-useless-escape
-    return '<script type="application/ld+json">' + JSON.stringify(schema) + '<\/script>';
-  }
+    return "<script type=\"application/ld+json\">" + JSON.stringify(schema) + "<\/script>";
+  };
 
   const schemaOrgWebPage = serializeSchema({
     "@context": "http://schema.org",
@@ -82,8 +83,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
   <link rel="shortcut icon" href="favicon.ico" />
+  <meta name="theme-color" content={themeColor} />
 
-  <meta name="msapplication-TileColor" content="#000000" />
+  <meta name="msapplication-TileColor" content={backgroundColor} />
   <meta name="msapplication-config" content="browserconfig.xml" />
   <meta name="description" content={description} />
   <meta name="image" content={siteLogo} />
@@ -110,6 +112,6 @@
   <div class="relative h-screen bg-white dark:bg-black dark:text-white">
     <ThemeSelector />
 
-    <slot></slot>
+    <slot />
   </div>
 {/if}

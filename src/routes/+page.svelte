@@ -1,9 +1,9 @@
 <script lang="ts">
   import { BookIcon, FilterIcon, GithubIcon, MessageCircleIcon, RssIcon } from "svelte-feather-icons";
-  import RocketScienceHero from "$lib/assets/images/RocketScienceHero-optimized.jpg";
-  import ExposeHero from "../lib/assets/images/ExposeHero-optimized.jpg";
-  import MastodonPersoHero from "$lib/assets/images/MastodonPersoHero-optimized.jpg";
-  import PortfolioHero from "$lib/assets/images/PortfolioHero-optimized.jpg";
+  import RocketScienceHero from "$lib/assets/images/RocketScienceHero.jpg?w=768&webp";
+  import ExposeHero from "../lib/assets/images/ExposeHero.jpg?w=768&webp";
+  import MastodonPersoHero from "$lib/assets/images/MastodonPersoHero.jpg?w=768&webp";
+  import PortfolioHero from "$lib/assets/images/PortfolioHero.jpg?w=768&webp";
   import type { SvelteComponent } from "svelte";
 
   interface Project {
@@ -68,12 +68,12 @@
     <div class="flex">
       {#each projects as project}
         <div class="relative w-96 flex flex-col overflow-hidden m-1 last:mr-32">
-          <h3>
+          <h2>
             <a href={project.link}>
               {project.title}
               <svelte:component this={project.icon} class="inline" />
             </a>
-          </h3>
+          </h2>
           <div class="grow overflow-hidden">
             <img src={project.heroImg} alt={project.title}
                  class="h-full object-cover transition-all duration-700 hover:scale-105" />

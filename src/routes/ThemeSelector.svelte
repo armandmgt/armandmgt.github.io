@@ -11,7 +11,7 @@
 </script>
 
 <div class="absolute top-2 right-2">
-    <button on:click={toggleSelector}>
+    <button on:click={toggleSelector} aria-label="Theme selector">
         {#if $theme === 'light'}
             <SunIcon/>
         {:else if $theme === 'dark'}

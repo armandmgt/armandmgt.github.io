@@ -12,29 +12,29 @@
     h2 {
         @apply font-medium;
         @apply leading-tight;
-        @apply text-4xl
+        @apply text-3xl
     }
 
     h3 {
         @apply font-medium;
         @apply leading-tight;
-        @apply text-3xl
+        @apply text-2xl
     }
 
     h4 {
         @apply font-medium;
         @apply leading-tight;
-        @apply text-2xl
+        @apply text-xl
     }
 
     h5 {
         @apply font-medium;
         @apply leading-tight;
-        @apply text-xl
+        @apply text-base
     }
 
     h6 {
-        @apply font-medium;
+        @apply font-normal;
         @apply leading-tight;
         @apply text-base
     }
