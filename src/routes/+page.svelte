@@ -62,31 +62,30 @@
   </button>
 </nav>
 
-<main class="p-4 h-full">
+<main class="flex flex-col p-4 max-h-full">
   <h1 class="mb-10">Things I did</h1>
-  <div class="flex grow overflow-x-auto">
-    <div class="flex">
-      {#each projects as project}
-        <div class="relative w-96 flex flex-col overflow-hidden m-1 last:mr-32">
-          <h2>
-            <a href={project.link}>
-              {project.title}
-              <svelte:component this={project.icon} class="inline" />
-            </a>
-          </h2>
-          <div class="grow overflow-hidden">
-            <img src={project.heroImg} alt={project.title}
-                 class="h-full object-cover transition-all duration-700 hover:scale-105" />
-          </div>
-          <p
-            class="absolute text-{project.descColor} border-{project.descColor} p-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border-t transition-all overflow-hidden"
-            style:bottom={descShown ? '0' : '-100px'}
-          >
-            {project.description}
-          </p>
+  <div class="max-h-full pb-3 flex overflow-x-scroll">
+    {#each projects as project}
+      <div class="relative flex flex-col shrink-0 w-1/3 m-1 overflow-hidden">
+        <h2>
+          <a href={project.link}>
+            {project.title}
+            <svelte:component this={project.icon} class="inline" />
+          </a>
+        </h2>
+        <div class="flex-grow overflow-hidden">
+          <img src={project.heroImg} alt={project.title}
+               class="h-full w-full object-cover transition-all duration-700 hover:scale-105" />
         </div>
-      {/each}
-    </div>
+        <p
+          class="absolute bottom-0 text-{project.descColor} border-{project.descColor} p-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border-t transition-all overflow-hidden"
+          style:transform={descShown ? 'unset' : 'translate(0, 100%)'}
+        >
+          {project.description}
+        </p>
+      </div>
+    {/each}
+    <div class="shrink-0 m-1 w-32"></div>
   </div>
   <footer>
     <a href="https://github.com/armandmgt/armandmgt.github.io" class="text-xs">

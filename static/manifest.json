@@ -4,7 +4,7 @@
   "description": "Landing page showing the things I’m proud of.",
   "start_url": "/",
   "background_color": "#000000",
-  "theme_color": "#0790F2",
+  "theme_color": "#FFFFFF",
   "display": "standalone",
   "icons": [
     {
