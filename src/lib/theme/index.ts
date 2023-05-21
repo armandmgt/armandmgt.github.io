@@ -12,37 +12,41 @@ const detectSystemPreference = (e: MediaQueryListEvent) => applyTheme(e.matches 
  * Applies system preference theme and registers a listener for changes
  */
 export const initTheme = async (): Promise<void> => {
-  if (!browser) return;
+	if (!browser) return;
 
-  window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', detectSystemPreference);
+	window
+		.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', detectSystemPreference);
 
-  if ('theme' in localStorage && theme) {
-    try {
-      const pref = get(theme);
-      if (pref) {
-        applyTheme(pref as string);
-      }
-    } catch (err) {
-      console.error(err);
-      localStorage.removeItem('theme');
-    }
-  } else {
-    applyTheme('system');
-  }
-  initComplete.set(true);
+	if ('theme' in localStorage && theme) {
+		try {
+			const pref = get(theme);
+			if (pref) {
+				applyTheme(pref as string);
+			}
+		} catch (err) {
+			console.error(err);
+			localStorage.removeItem('theme');
+		}
+	} else {
+		applyTheme('system');
+	}
+	initComplete.set(true);
 };
 
 export const initComplete = writable(false);
 
 export const applyTheme = (newTheme: string): void => {
-  if (!browser) return;
+	if (!browser) return;
 
-  const className = newTheme === 'system' ?
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') :
-    newTheme;
+	const className =
+		newTheme === 'system'
+			? window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light'
+			: newTheme;
 
-  document?.documentElement?.classList.remove('light', 'dark');
-  document?.documentElement?.classList.add(className);
-  theme.set(newTheme);
+	document?.documentElement?.classList.remove('light', 'dark');
+	document?.documentElement?.classList.add(className);
+	theme.set(newTheme);
 };

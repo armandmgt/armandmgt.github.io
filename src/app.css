@@ -3,39 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-    h1 {
-        @apply font-medium;
-        @apply leading-tight;
-        @apply text-5xl
-    }
+	h1 {
+		@apply font-medium;
+		@apply leading-tight;
+		@apply text-5xl;
+	}
 
-    h2 {
-        @apply font-medium;
-        @apply leading-tight;
-        @apply text-3xl
-    }
+	h2 {
+		@apply font-medium;
+		@apply leading-tight;
+		@apply text-3xl;
+	}
 
-    h3 {
-        @apply font-medium;
-        @apply leading-tight;
-        @apply text-2xl
-    }
+	h3 {
+		@apply font-medium;
+		@apply leading-tight;
+		@apply text-2xl;
+	}
 
-    h4 {
-        @apply font-medium;
-        @apply leading-tight;
-        @apply text-xl
-    }
+	h4 {
+		@apply font-medium;
+		@apply leading-tight;
+		@apply text-xl;
+	}
 
-    h5 {
-        @apply font-medium;
-        @apply leading-tight;
-        @apply text-base
-    }
+	h5 {
+		@apply font-medium;
+		@apply leading-tight;
+		@apply text-base;
+	}
 
-    h6 {
-        @apply font-normal;
-        @apply leading-tight;
-        @apply text-base
-    }
+	h6 {
+		@apply font-normal;
+		@apply leading-tight;
+		@apply text-base;
+	}
 }
