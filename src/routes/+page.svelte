@@ -107,7 +107,7 @@
 	</div>
 	<div class="max-h-full pb-3 flex overflow-x-scroll">
 		{#each projects as project}
-			<div class="relative flex flex-col shrink-0 w-1/3 m-1 overflow-hidden">
+			<div class="relative flex flex-col shrink-0 w-11/12 md:w-1/3 m-1 overflow-hidden">
 				<h2>
 					<a href={project.link}>
 						{project.title}
@@ -129,7 +129,7 @@
 				</p>
 			</div>
 		{/each}
-		<div class="shrink-0 m-1 w-32" />
+		<div class="shrink-0 m-1 md:w-32" />
 	</div>
 	<footer>
 		<a href="https://github.com/armandmgt/armandmgt.github.io" class="text-xs">
