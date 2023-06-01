@@ -42,7 +42,7 @@
 		},
 		{
 			heroImg: MastodonPersoHero,
-			title: 'Self-hosted mastodon',
+			title: 'Self-host mastodon',
 			icon: MessageCircleIcon,
 			description:
 				'I am self-hosting a mastodon personal instance. The purpose was to avoid lags and also to understand how it works.',
@@ -131,7 +131,7 @@
 		{/each}
 		<div class="shrink-0 m-1 md:w-32" />
 	</div>
-	<footer>
+	<footer class="mt-24 md:mt-0">
 		<a href="https://github.com/armandmgt/armandmgt.github.io" class="text-xs">
 			<GithubIcon size="12" class="inline mr-1" />
 			This site is on Github
