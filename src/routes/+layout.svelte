@@ -7,8 +7,8 @@
 	if (browser) import('tw-elements');
 	initTheme();
 
-	const themeColor = '#0790F2';
-	const backgroundColor = '#000000';
+	const themeColor = 'white';
+	const backgroundColor = 'white';
 	const siteLogo = 'logo.png';
 	const siteName = 'Portfolio - armandmgt';
 	const description = 'Landing page showing the things I am proud of.';
@@ -85,7 +85,13 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 	<link rel="shortcut icon" href="favicon.ico" />
+	<meta name="color-scheme" content="dark light" />
 	<meta name="theme-color" content={themeColor} />
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
+	<meta name="background-color" content="{backgroundColor}">
+	<meta name="background-color" media="(prefers-color-scheme: light)" content="white">
+	<meta name="background-color" media="(prefers-color-scheme: dark)"  content="black">
 
 	<meta name="msapplication-TileColor" content={backgroundColor} />
 	<meta name="msapplication-config" content="browserconfig.xml" />

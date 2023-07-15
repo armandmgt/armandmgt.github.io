@@ -3,7 +3,6 @@
 	"short_name": "Portfolio",
 	"description": "Landing page showing the things I’m proud of.",
 	"start_url": "/",
-	"background_color": "#ffffff",
 	"display": "standalone",
 	"icons": [
 		{

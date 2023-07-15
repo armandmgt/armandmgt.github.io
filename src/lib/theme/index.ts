@@ -48,5 +48,9 @@ export const applyTheme = (newTheme: string): void => {
 
 	document?.documentElement?.classList.remove('light', 'dark');
 	document?.documentElement?.classList.add(className);
+	const color = newTheme === 'light' ? 'white' : 'black'
+	document?.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
+	document?.querySelector('meta[name="background-color"]')?.setAttribute('content', color);
+	document?.querySelector('meta[name="msapplication-TileColor"]')?.setAttribute('content', color);
 	theme.set(newTheme);
 };

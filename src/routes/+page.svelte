@@ -94,15 +94,28 @@
 
 <main class="flex flex-col p-4 max-h-full">
 	<div>
-		<h1 class="pb-10 inline-block font-bold">
-			Things I am
+		<h1 class="header pb-10 inline-block font-bold">
 			<span
-				class="bg-gradient-to-r text-transparent bg-clip-text
-              from-fuchsia-800 to-orange-500 dark:from-cyan-500 dark:to-blue-500"
+				class="animated gradient-1
+							bg-gradient-to-r text-transparent bg-clip-text
+							from-blue-500 to-cyan-500"
 			>
-				proud
+				Things
 			</span>
-			of&hellip;
+			<span
+				class="animated gradient-2
+							bg-gradient-to-r text-transparent bg-clip-text
+              from-fuchsia-800 to-pink-600"
+			>
+				I am
+			</span>
+			<span
+				class="animated gradient-3
+							bg-gradient-to-r text-transparent bg-clip-text
+              from-orange-500 to-amber-300"
+			>
+				proud of&hellip;
+			</span>
 		</h1>
 	</div>
 	<div class="max-h-full pb-3 flex overflow-x-scroll">
@@ -138,3 +151,63 @@
 		</a>
 	</footer>
 </main>
+
+<style lang="scss">
+	@keyframes animated-gradient-1 {
+		0%,
+		16.667%,
+		100% {
+			opacity: 1;
+		}
+		33.333%,
+		83.333% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes animated-gradient-2 {
+		0%,
+		100% {
+			opacity: 0;
+		}
+		33.333%,
+		50% {
+			opacity: 1;
+		}
+		16.667%,
+		66.667% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes animated-gradient-3 {
+		0%,
+		50%,
+		100% {
+			opacity: 0;
+		}
+		66.6%,
+		83.3% {
+			opacity: 1;
+		}
+	}
+
+	.header {
+		&::before {
+			content: 'Things I am proud of…';
+			position: absolute;
+		}
+	}
+
+	.animated.gradient-1 {
+		animation: animated-gradient-1 8s infinite;
+	}
+
+	.animated.gradient-2 {
+		animation: animated-gradient-2 8s infinite;
+	}
+
+	.animated.gradient-3 {
+		animation: animated-gradient-3 8s infinite;
+	}
+</style>
