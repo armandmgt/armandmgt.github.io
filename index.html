@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="/manifest.json" />
+	<title>Portfolio - armandmgt</title>
+	<link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<meta name="color-scheme" content="dark light" />
+	<meta name="theme-color" content="white" />
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+	<meta name="background-color" content="white">
+	<meta name="background-color" media="(prefers-color-scheme: light)" content="white">
+	<meta name="background-color" media="(prefers-color-scheme: dark)" content="black">
+
+	<meta name="msapplication-TileColor" content="white" />
+	<meta name="msapplication-config" content="browserconfig.xml" />
+	<meta name="description" content="Landing page showing the things I am proud of." />
+	<meta name="image" content="/logo.png" />
+
+	<meta property="og:locale" content="en" />
+	<meta property="og:site_name" content="Portfolio - armandmgt" />
+	<meta property="og:title" content="Home" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Landing page showing the things I am proud of." />
+	<meta property="og:image" content="/logo.png" />
+	<meta property="og:image:alt" content="Landing page showing the things I am proud of." />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@armandmgt" />
+	<meta name="twitter:title" content="Portfolio - armandmgt" />
+	<meta name="twitter:description" content="Landing page showing the things I am proud of." />
+	<meta name="twitter:image" content="/logo.png" />
+	<meta name="twitter:image:alt" content="Landing page showing the things I am proud of." />
+
+	<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "WebPage",
+		"url": "/",
+		"headline": "Things I am proud of...",
+		"inLanguage": "en",
+		"mainEntityOfPage": "/",
+		"description": "Landing page showing the things I am proud of.",
+		"name": "Portfolio - armandmgt",
+		"author": {
+			"@type": "Person",
+			"name": "Armand Mégrot"
+		},
+		"copyrightHolder": {
+			"@type": "Person",
+			"name": "Armand Mégrot"
+		},
+		"copyrightYear": "2022",
+		"creator": {
+			"@type": "Person",
+			"name": "Armand Mégrot"
+		},
+		"publisher": {
+			"@type": "Person",
+			"name": "Armand Mégrot"
+		},
+		"datePublished": "2022-11-21",
+		"dateModified": "2024-10-08T21:25:24.548Z",
+		"image": {
+			"@type": "ImageObject",
+			"url": "logo.png"
+		}
+	}</script>
+	<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "BreadcrumbList",
+		"description": "Breadcrumbs list",
+		"name": "Breadcrumbs",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"item": {
+					"@id": "/",
+					"name": "Homepage"
+				},
+				"position": 1
+			}
+		]
+	}</script>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+      @keyframes animated-gradient-1 {
+          0%,
+          16.667%,
+          100% {
+              opacity: 1;
+          }
+          33.333%,
+          83.333% {
+              opacity: 0;
+          }
+      }
+
+      @keyframes animated-gradient-2 {
+          0%,
+          100% {
+              opacity: 0;
+          }
+          33.333%,
+          50% {
+              opacity: 1;
+          }
+          16.667%,
+          66.667% {
+              opacity: 0;
+          }
+      }
+
+      @keyframes animated-gradient-3 {
+          0%,
+          50%,
+          100% {
+              opacity: 0;
+          }
+          66.6%,
+          83.3% {
+              opacity: 1;
+          }
+      }
+
+      .header::before {
+          content: 'Things I am proud of…';
+          position: absolute;
+      }
+
+      .animated.gradient-1 {
+          animation: animated-gradient-1 8s infinite;
+      }
+
+      .animated.gradient-2 {
+          animation: animated-gradient-2 8s infinite;
+      }
+
+      .animated.gradient-3 {
+          animation: animated-gradient-3 8s infinite;
+      }
+	</style>
+</head>
+<body>
+<div style="display: contents">
+	<div class="relative h-screen bg-white dark:bg-black dark:text-white">
+		<nav>
+			<button
+				class="absolute z-10 bottom-10 right-10 w-24 h-24 rounded-full overflow-hidden text-transparent text-xl font-bold bg-black dark:bg-white hover:scale-125 hover:text-white from-fuchsia-800 to-orange-500 dark:from-cyan-500 dark:to-blue-500 transition-all"
+				onclick="toggleDesc()">
+				<span
+					class="from-fuchsia-800 to-orange-500 dark:from-cyan-500 dark:to-blue-500 inline-block w-full h-full grid place-items-center hover:bg-gradient-to-r bg-clip-text text-transparent">
+					<span>SHOW</span>
+				</span>
+			</button>
+		</nav>
+
+		<main class="flex flex-col p-4 max-h-full">
+			<div>
+				<h1 class="leading-tight text-5xl header pb-10 inline-block font-bold">
+					<span class="animated gradient-1 bg-gradient-to-r text-transparent bg-clip-text from-blue-500 to-cyan-500">
+						Things
+					</span>
+					<span class="animated gradient-2 bg-gradient-to-r text-transparent bg-clip-text from-fuchsia-800 to-pink-600">
+						I am
+					</span>
+					<span class="animated gradient-3 bg-gradient-to-r text-transparent bg-clip-text from-orange-500 to-amber-300">
+						proud of&hellip;
+					</span>
+				</h1>
+			</div>
+			<div class="max-h-full pb-3 flex overflow-x-scroll">
+				<div class="relative flex flex-col shrink-0 w-11/12 md:w-1/3 m-1 overflow-hidden">
+					<h2 class="font-medium leading-tight text-3xl">
+						<a href="https://github.com/armandmgt/rocket-science">
+							Rocket Science
+							<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+									 stroke-linecap="round" stroke-linejoin="round" class="inline">
+								<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+							</svg>
+						</a>
+					</h2>
+					<div class="flex-grow overflow-hidden">
+						<img
+							src="/assets/images/RocketScienceHero.jpg"
+							alt="Rocket Science"
+							class="h-full w-full object-cover transition-all duration-700 hover:scale-105"
+						/>
+					</div>
+					<p
+						class="absolute bottom-0 text-white border-white p-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border-t transition-all overflow-hidden desc"
+						style="transform: translate(0, 100%)"
+					>
+						Experimentation project using a sport API. The goal is to experiment with the Dynamic Island &
+						LiveActivities API on iOS.
+					</p>
+				</div>
+
+				<div class="relative flex flex-col shrink-0 w-11/12 md:w-1/3 m-1 overflow-hidden">
+					<h2 class="font-medium leading-tight text-3xl">
+						<a href="https://github.com/armandmgt/expose">
+							Expose
+							<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+									 stroke-linecap="round" stroke-linejoin="round" class="inline">
+								<path d="M4 11a9 9 0 0 1 9 9"></path>
+								<path d="M4 4a16 16 0 0 1 16 16"></path>
+								<circle cx="5" cy="19" r="1"></circle>
+							</svg>
+						</a>
+					</h2>
+					<div class="flex-grow overflow-hidden">
+						<img
+							src="/assets/images/ExposeHero.jpg"
+							alt="Expose"
+							class="h-full w-full object-cover transition-all duration-700 hover:scale-105"
+						/>
+					</div>
+					<p
+						class="absolute bottom-0 text-white border-white p-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border-t transition-all overflow-hidden desc"
+						style="transform: translate(0, 100%)"
+					>
+						Implementing a reverse proxy to expose local web applications. The local proxy also exposes a web dashboard
+						to inspect and replay requests.
+					</p>
+				</div>
+
+				<div class="relative flex flex-col shrink-0 w-11/12 md:w-1/3 m-1 overflow-hidden">
+					<h2 class="font-medium leading-tight text-3xl">
+						<a href="https://github.com/armandmgt/armandmgt.github.io">
+							This portfolio
+							<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+									 stroke-linecap="round" stroke-linejoin="round" class="inline">
+								<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+								<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+							</svg>
+						</a>
+					</h2>
+					<div class="flex-grow overflow-hidden">
+						<img
+							src="/assets/images/PortfolioHero.jpg"
+							alt="This portfolio"
+							class="h-full w-full object-cover transition-all duration-700 hover:scale-105"
+						/>
+					</div>
+					<p
+						class="absolute bottom-0 text-white border-white p-3 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border-t transition-all overflow-hidden desc"
+						style="transform: translate(0, 100%)"
+					>
+						Showing off the few side-projects I am happy about. I am not a good designer so please be kind :)
+					</p>
+				</div>
+
+				<div class="shrink-0 m-1 md:w-32"></div>
+			</div>
+			<footer class="mt-24 md:mt-0">
+				<a href="https://github.com/armandmgt/armandmgt.github.io" class="text-xs">
+					<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"
+							 stroke-linecap="round" stroke-linejoin="round" class="inline mr-1">
+						<path
+							d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+					</svg>
+					This site is on Github
+				</a>
+			</footer>
+		</main>
+	</div>
+</div>
+<script>
+	let descShown = false;
+
+	function toggleDesc() {
+		descShown = !descShown;
+		const span = document.querySelector('nav button span');
+		span.classList.toggle('hover:bg-gradient-to-br');
+		span.classList.toggle('hover:bg-gradient-to-r');
+		span.classList.toggle('bg-clip-text');
+		span.classList.toggle('text-transparent');
+		span.innerText = descShown ? 'HIDE' : 'SHOW';
+
+		document.querySelectorAll('.desc').forEach(desc => {
+			desc.style.transform = descShown ? 'unset' : 'translate(0, 100%)';
+		});
+	}
+</script>
+</body>
+</html>
